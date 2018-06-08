@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, Picker, ScrollView} from 'react-native'
-import {Text, ListItem, Button} from 'react-native-elements'
+import {Text, ListItem, Button, FormLabel} from 'react-native-elements'
 
 class WidgetList extends Component {
     static navigationOptions = {title: 'Widgets'}
@@ -25,12 +25,8 @@ class WidgetList extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        //const {navigation} = this.props;
-        const lessonId = newProps.props.navigation.getParam("lessonId")
-        this.setState({
-            lessonId: lessonId
-        })
-        fetch("http://10.110.97.251:8080/api/lesson/"+lessonId+"/widget")
+        this.setState({lessonId: newProps.match.params.lessonId});
+        fetch("http://localhost:8080/api/lesson/"+ this.state.lessonId+"/widget")
             .then(response => (response.json()))
             .then(widgets => this.setState({widgets}))
     }
@@ -38,6 +34,8 @@ class WidgetList extends Component {
     render() {
         return(
             <ScrollView style={{padding: 15}}>
+
+                <FormLabel>Click on a widget you'd like to add.</FormLabel>
                 <Button	backgroundColor="green"
                            onPress={() => this.props.navigation
                                .navigate("Assignment", {lessonId:
@@ -58,7 +56,9 @@ class WidgetList extends Component {
                                 <ListItem onPress={() => this.props.navigation
                                     .navigate("Assignment", {
                                         lessonId: this.state.lessonId,
-                                        widgetId: widget.id
+                                        widgetId: widget.id,
+                                        title: widget.title,
+                                        description: widget.description
                                     })}
                                           key={index}
                                           subtitle={widget.description}

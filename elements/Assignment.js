@@ -11,10 +11,10 @@ class Assignment extends React.Component {
         this.state = {
             title: '',
             description: '',
-            points: 0,
+            points: '',
+            widgetType: 'Assignment'
             lessonId: 1,
-            widgetId: 1,
-            assignments: []
+            widgetId: 1
             // assignment: {title: 'New Assignment', description: 'add description'},
         };
 
@@ -33,8 +33,52 @@ class Assignment extends React.Component {
     componentDidMount() {
         const lessonId = this.props.navigation.getParam("lessonId", 1);
         const widgetId = this.props.navigation.getParam("widgetId", 1);
+        const title = this.props.navigation.getParam("title", '');
+        const description = this.props.navigation.getParam("description", '');
+        const points = this.props.navigation.getParam("points", '');
         this.setState({lessonId : lessonId});
         this.setState({widgetId : widgetId});
+        this.setState({title : title});
+        this.setState({description : description});
+        this.setState({points : points});
+
+    }
+
+    renderTitle() {
+        if (this.props.navigation.getParam("title", '') === '') {
+            return (
+                <FormInput onChangeText={text => this.updateForm({title: text})}/>
+            )
+        } else {
+            return (
+                <FormInput placeholder={this.state.title}/>
+            )
+        }
+    }
+
+    renderDescription() {
+        if (this.props.navigation.getParam("description", '') === '') {
+            return (
+                <FormInput onChangeText={text => this.updateForm({description: text})}/>
+
+            )
+        } else {
+            return (
+                <FormInput placeholder={this.state.description}/>
+            )
+        }
+    }
+
+    renderPoints() {
+        if (this.props.navigation.getParam("points", '') === '') {
+            return (
+                <FormInput onChangeText={text => this.updateForm({points: text})}/>
+            )
+        } else {
+            return (
+                <FormInput placeholder={this.state.points}/>
+            )
+        }
     }
 
     createAssignment() {
@@ -42,48 +86,38 @@ class Assignment extends React.Component {
             title: this.state.title,
             description: this.state.description,
             points: this.state.points,
-            widgetType: 'Assignment'
+            widgetType: this.state.widgetType
         }
         this.assignmentService.createAssignment(this.state.lessonId, temp)
             .then(this.props.navigation.goBack())
-        // .then(() => {
-        //     this.findAllAssignmentsForLesson(this.state.lessonId)
-        // });
-        //maybe add something here....
+
     }
 
     deleteAssignment(widgetId) {
         this.assignmentService.deleteAssignment(widgetId)
             .then(this.props.navigation.navigate("WidgetList"))
-        // .then(() => {
-        //     this.findAllAssignmentsForLesson(this.state.lessonId)
-        // });
     }
 
     render() {
         return (
             <ScrollView>
-                <Text>This is an example assignment.</Text>
                 <FormLabel>Title</FormLabel>
-                <FormInput onChangeText={
-                    text => this.updateForm({title: text})
-                }/>
+                {this.renderTitle()}
+                {/*<FormInput onChangeText={text => this.updateForm({title: text})}/>*/}
                 <FormValidationMessage>
                     Title is required
                 </FormValidationMessage>
 
                 <FormLabel>Description</FormLabel>
-                <FormInput onChangeText={
-                    text => this.updateForm({description: text})
-                }/>
+                {this.renderDescription()}
+                {/*<FormInput onChangeText={text => this.updateForm({description: text})}/>*/}
                 <FormValidationMessage>
                     Description is required
                 </FormValidationMessage>
 
                 <FormLabel>Points</FormLabel>
-                <FormInput onChangeText={
-                    text => this.updateForm({points: text})
-                }/>
+                {this.renderPoints()}
+                {/*<FormInput onChangeText={text => this.updateForm({points: text})}/>*/}
                 <FormValidationMessage>
                     Points are required
                 </FormValidationMessage>
@@ -104,26 +138,50 @@ class Assignment extends React.Component {
                         title="delete"/>
 
                 <View style={{padding: 15, backgroundColor: "#66ccff"}}>
-                    <Text h4>PREVIEW</Text>
-                    <Text>{this.state.title} </Text>
-                    <Text>{this.state.points} </Text>
 
-                    <Text h2>Essay Answer</Text>
-                    <TextInput underlineColorAndroid = "transparent"
-                               multiline = {true}
-                               numberOfLines = {4}
-                               placeholder = "Essay Sample"
-                               placeholderTextColor = "#9a73ef"
-                               autoCapitalize = "none"/>
-
-                    <Text h2>Upload a file</Text>
+                    <FormLabel>Title:{this.state.title}</FormLabel>
+                    <FormLabel>Description:{this.state.description}</FormLabel>
+                    <FormLabel>Points:{this.state.points}</FormLabel>
+                    <TextInput
+                        style={{height: 100}}
+                        multiline = {true}
+                        numberOfLines = {4}
+                        autoCapitalize = "none"
+                        placeholder="Write your solutions here"
+                    />
+                    <FormLabel>Upload a file</FormLabel>
                     <Button title="Choose file"/>
+                    <FormLabel>Submit a link</FormLabel>
+                    <FormInput/>
+                    <Button
+                        backgroundColor="black"
+                        color="white"
+                        title="Cancel"/>
+                    <Button
+                        backgroundColor="white"
+                        color="black"
+                        title="Submit"/>
 
-                    <Text h2>Submit a link</Text>
-                    <TextInput underlineColorAndroid = "transparent"
-                               placeholder = "Insert link"
-                               placeholderTextColor = "#9a73ef"
-                               autoCapitalize = "none"/>
+                    {/*<Text h4>PREVIEW</Text>*/}
+                    {/*<Text>{this.state.title} </Text>*/}
+                    {/*<Text>{this.state.points} </Text>*/}
+
+                    {/*<Text h2>Essay Answer</Text>*/}
+                    {/*<TextInput underlineColorAndroid = "transparent"*/}
+                               {/*multiline = {true}*/}
+                               {/*numberOfLines = {4}*/}
+                               {/*placeholder = "Essay Sample"*/}
+                               {/*placeholderTextColor = "#9a73ef"*/}
+                               {/*autoCapitalize = "none"/>*/}
+
+                    {/*<Text h2>Upload a file</Text>*/}
+                    {/*<Button title="Choose file"/>*/}
+
+                    {/*<Text h2>Submit a link</Text>*/}
+                    {/*<TextInput underlineColorAndroid = "transparent"*/}
+                               {/*placeholder = "Insert link"*/}
+                               {/*placeholderTextColor = "#9a73ef"*/}
+                               {/*autoCapitalize = "none"/>*/}
 
                 </View>
 

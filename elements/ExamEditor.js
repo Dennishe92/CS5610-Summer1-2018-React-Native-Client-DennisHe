@@ -18,7 +18,7 @@ class ExamEditor extends React.Component {
     componentDidMount() {
         const lessonId = this.props.navigation.getParam("lessonId", 1);
         const widgetId = this.props.navigation.getParam("widgetId", 1);
-        const title = this.props.navigation.getParm("title")
+        const title = this.props.navigation.getParam("title")
         this.setState({lessonId : lessonId});
         this.setState({widgetId : widgetId});
         this.setState({title : title})
@@ -38,24 +38,24 @@ class ExamEditor extends React.Component {
                     <Picker.Item value="FB" label="Fill in the blanks" />
                 </Picker>
 
-                <Button onPress={()=> {
-                    if (this.state.questionType === "TF") {
-                        this.props.navigation.navigate("TrueFalseQuestion",
-                            {widgetId: this.state.widgetId})
-                    }
-                    else if (this.state.questionType == "ES") {
-                        this.props.navigation.navigate("EssayQuestion",
-                            {widgetId: this.state.widgetId})
-                    }
-                    else if (this.state.questionType == "TF") {
-                        this.props.navigation.navigate("TrueFalseQuestion",
-                            {widgetId: this.state.widgetId})
-                    }
-                    else (this.state.questionType == "FB") {
-                        this.props.navigation.navigate("FillTheBlankQuestion",
-                            {widgetId: this.state.widgetId})
-                    }
-                        }}/>
+                {/*<Button onPress={()=> {*/}
+                    {/*if (this.state.questionType === "TF") {*/}
+                        {/*this.props.navigation.navigate("TrueFalseQuestion",*/}
+                            {/*{widgetId: this.state.widgetId})*/}
+                    {/*}*/}
+                    {/*else if (this.state.questionType == "ES") {*/}
+                        {/*this.props.navigation.navigate("EssayQuestion",*/}
+                            {/*{widgetId: this.state.widgetId})*/}
+                    {/*}*/}
+                    {/*else if (this.state.questionType == "TF") {*/}
+                        {/*this.props.navigation.navigate("TrueFalseQuestion",*/}
+                            {/*{widgetId: this.state.widgetId})*/}
+                    {/*}*/}
+                    {/*else (this.state.questionType == "FB") {*/}
+                        {/*this.props.navigation.navigate("FillTheBlankQuestion",*/}
+                            {/*{widgetId: this.state.widgetId})*/}
+                    {/*}*/}
+                        {/*}}/>*/}
                 {/*<View>*/}
                     {/*{this.state.widgetType === "Assignment" &&*/}
                     {/*<Assignment lessonId={this.state.lessonId}/>}*/}
@@ -65,6 +65,5 @@ class ExamEditor extends React.Component {
             </View>
         )
     }
-
-
 }
+export default ExamEditor;

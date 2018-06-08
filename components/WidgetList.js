@@ -14,8 +14,8 @@ class WidgetList extends Component {
         }
     }
     componentDidMount() {
-        const {navigation} = this.props;
-        const lessonId = navigation.getParam("lessonId")
+        //const {navigation} = this.props;
+        const lessonId = this.props.navigation.getParam("lessonId")
         this.setState({
             lessonId: lessonId
         })
@@ -23,6 +23,18 @@ class WidgetList extends Component {
             .then(response => (response.json()))
             .then(widgets => this.setState({widgets}))
     }
+
+    componentWillReceiveProps(newProps) {
+        //const {navigation} = this.props;
+        const lessonId = newProps.props.navigation.getParam("lessonId")
+        this.setState({
+            lessonId: lessonId
+        })
+        fetch("http://10.110.97.251:8080/api/lesson/"+lessonId+"/widget")
+            .then(response => (response.json()))
+            .then(widgets => this.setState({widgets}))
+    }
+
     render() {
         return(
             <ScrollView style={{padding: 15}}>
@@ -55,9 +67,10 @@ class WidgetList extends Component {
                         if (widget.widgetType === 'Exam') {
                             return (
                                 <ListItem onPress={() => this.props.navigation
-                                    .navigate("Exam", {
+                                    .navigate("ExamEditor", {
                                         lessonId: this.state.lessonId,
-                                        widgetId: widget.id
+                                        widgetId: widget.id,
+                                        title: widget.title
                                     })}
                                           key={index}
                                           subtitle={widget.description}

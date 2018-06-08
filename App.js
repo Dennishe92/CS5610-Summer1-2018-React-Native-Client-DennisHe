@@ -17,6 +17,7 @@ import LessonList from './components/LessonList'
 import WidgetList from './components/WidgetList'
 import QuestionList from './components/QuestionList'
 import Assignment from './elements/Assignment'
+import ExamEditor from './elements/ExamEditor'
 
 class Home extends React.Component {
     static navigationOptions = {
@@ -97,7 +98,8 @@ const App = createStackNavigator({
     ScreenB,
     ScreenX,
     Assignment,
-    Exam
+    Exam,
+    ExamEditor
 });
 
 export default App;

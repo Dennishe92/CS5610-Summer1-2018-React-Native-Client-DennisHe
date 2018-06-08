@@ -1,7 +1,7 @@
 import React from 'react'
 import AssignmentService from '../services/AssignmentService'
 import {Text, Button, FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-import {ScrollView} from 'react-native';
+import {ScrollView, View, TextInput} from 'react-native';
 import QuestionTypeButtonGroupChooser from "./QuestionTypeButtonGroupChooser";
 
 class Assignment extends React.Component {
@@ -54,7 +54,7 @@ class Assignment extends React.Component {
 
     deleteAssignment(widgetId) {
         this.assignmentService.deleteAssignment(widgetId)
-            .then(this.props.navigation.goBack())
+            .then(this.props.navigation.navigate("WidgetList"))
         // .then(() => {
         //     this.findAllAssignmentsForLesson(this.state.lessonId)
         // });
@@ -98,13 +98,40 @@ class Assignment extends React.Component {
                         color="white"
                         title="Cancel"/>
 
-                <Button onPress={() => this.deleteAssignment()}
+                <Button onPress={() => this.deleteAssignment(this.state.widgetId)}
                         backgroundColor="blue"
                         color="white"
                         title="delete"/>
 
+                <View style={{padding: 15, backgroundColor: "#66ccff"}}>
+                    <Text h4>PREVIEW</Text>
+                    <Text>{this.state.title} </Text>
+                    <Text>{this.state.points} </Text>
+
+                    <Text h2>Essay Answer</Text>
+                    <TextInput underlineColorAndroid = "transparent"
+                               multiline = {true}
+                               numberOfLines = {4}
+                               placeholder = "Essay Sample"
+                               placeholderTextColor = "#9a73ef"
+                               autoCapitalize = "none"/>
+
+                    <Text h2>Upload a file</Text>
+                    <Button title="Choose file"/>
+
+                    <Text h2>Submit a link</Text>
+                    <TextInput underlineColorAndroid = "transparent"
+                               placeholder = "Insert link"
+                               placeholderTextColor = "#9a73ef"
+                               autoCapitalize = "none"/>
+
+                </View>
+
 
             </ScrollView>
+
+
+
 
         )
     }

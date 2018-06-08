@@ -24,7 +24,7 @@ class ExamService {
     }
 
     createExam(lessonId, exam) {
-        return fetch(ASSIGNMENT_API_URL2.replace('LID', lessonId), {
+        return fetch(EXAM_API_URL2.replace('LID', lessonId), {
             body: JSON.stringify(exam),
             headers: {
                 'Content-Type': 'application/json'

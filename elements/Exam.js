@@ -50,6 +50,7 @@ export default class Exam extends Component {
             widgetType: 'Exam'
         }
         this.examService.createExam(this.state.lessonId, temp)
+            .then(this.props.navigation.goBack())
     }
 
     deleteExam(widgetId) {
@@ -60,7 +61,7 @@ export default class Exam extends Component {
         return(
 
             <ScrollView>
-                <Text>This is an example assignment.</Text>
+                <Text>This is an example exam</Text>
                 <FormLabel>Title</FormLabel>
                 <FormInput onChangeText={
                     text => this.updateForm({title: text})

@@ -50,7 +50,6 @@ class Home extends React.Component {
                 <QuestionTypeButtonGroupChooser/>
                 <QuestionTypePicker/>
 
-                <Exam/>
 
                 <Icons/>
                 <View style={{padding: 20}}>
@@ -97,7 +96,8 @@ const App = createStackNavigator({
     ScreenA,
     ScreenB,
     ScreenX,
-    Assignment
+    Assignment,
+    Exam
 });
 
 export default App;

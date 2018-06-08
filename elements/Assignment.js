@@ -18,6 +18,10 @@ class Assignment extends React.Component {
             // assignment: {title: 'New Assignment', description: 'add description'},
         };
 
+        //Binding
+        //this.createAssignment = this.createAssignment.bind(this);
+
+
         //Service
         this.assignmentService = AssignmentService.instance;
     }
@@ -41,6 +45,7 @@ class Assignment extends React.Component {
             widgetType: 'Assignment'
         }
         this.assignmentService.createAssignment(this.state.lessonId, temp)
+            .then(this.props.navigation.goBack())
         // .then(() => {
         //     this.findAllAssignmentsForLesson(this.state.lessonId)
         // });
@@ -49,6 +54,7 @@ class Assignment extends React.Component {
 
     deleteAssignment(widgetId) {
         this.assignmentService.deleteAssignment(widgetId)
+            .then(this.props.navigation.goBack())
         // .then(() => {
         //     this.findAllAssignmentsForLesson(this.state.lessonId)
         // });
@@ -82,7 +88,7 @@ class Assignment extends React.Component {
                     Points are required
                 </FormValidationMessage>
 
-                <Button onPress={this.createAssignment}
+                <Button onPress={() => this.createAssignment()}
                         backgroundColor="green"
                         color="white"
                         title="save"/>
@@ -92,7 +98,7 @@ class Assignment extends React.Component {
                         color="white"
                         title="Cancel"/>
 
-                <Button onPress={this.deleteAssignment}
+                <Button onPress={() => this.deleteAssignment()}
                         backgroundColor="blue"
                         color="white"
                         title="delete"/>

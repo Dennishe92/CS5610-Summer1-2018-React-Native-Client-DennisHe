@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Picker} from 'react-native'
+import {View, Picker, ScrollView} from 'react-native'
 import {Text, ListItem, Button} from 'react-native-elements'
 
 class WidgetList extends Component {
@@ -25,7 +25,7 @@ class WidgetList extends Component {
     }
     render() {
         return(
-            <View style={{padding: 15}}>
+            <ScrollView style={{padding: 15}}>
                 <Button	backgroundColor="green"
                            onPress={() => this.props.navigation
                                .navigate("Assignment", {lessonId:
@@ -63,7 +63,7 @@ class WidgetList extends Component {
                                           subtitle={widget.description}
                                           title={widget.title}/>)}
                     })}
-            </View>
+            </ScrollView>
         )
     }
 }

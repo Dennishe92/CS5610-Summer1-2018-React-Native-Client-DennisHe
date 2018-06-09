@@ -84,7 +84,7 @@ export default class Exam extends Component {
                         title="add"/>
 
                 <Button onPress={() => this.props.navigation.goBack()}
-                        backgroundColor="red"
+                        backgroundColor="gray"
                         color="white"
                         title="Cancel"/>
 

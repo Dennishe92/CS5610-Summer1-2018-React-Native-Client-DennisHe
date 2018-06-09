@@ -127,26 +127,19 @@ class MultipleChoiceQuestion extends React.Component {
             </RadioGroup>
 
             <Button onPress={this.createMultipleChoiceQuestion}
-                    backgroundColor="white"
-                    color="black"
+                    backgroundColor="red"
+                    color="white"
                     title="Submit"/>
-            <Button backgroundColor="black"
+            <Button backgroundColor="gray"
                     color="white"
                     title="Cancel"
                     onPress={() => this.props.navigation
                         .navigate('QuestionList')}/>
             <Button onPress={this.deleteQuestion}
-                    backgroundColor="white"
-                    color="black"
+                    backgroundColor="red"
+                    color="white"
                     title="Delete" />
-            <Button
-                backgroundColor="black"
-                color="white"
-                title="Add Choice" />
-            <Button
-                backgroundColor="white"
-                color="black"
-                title="Delete Choice" />
+
         </ScrollView>
     }
 }

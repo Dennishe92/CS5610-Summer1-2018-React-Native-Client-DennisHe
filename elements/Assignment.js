@@ -2,7 +2,6 @@ import React from 'react'
 import AssignmentService from '../services/AssignmentService'
 import {Text, Button, FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
 import {ScrollView, View, TextInput} from 'react-native';
-import QuestionTypeButtonGroupChooser from "./QuestionTypeButtonGroupChooser";
 
 class Assignment extends React.Component {
     static navigationOptions = {title: 'Assignments'}

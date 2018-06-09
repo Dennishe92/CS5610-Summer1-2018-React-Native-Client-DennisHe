@@ -120,17 +120,17 @@ class TrueFalseQuestionEditor extends React.Component {
                           checked={this.state.isTrue}/>
 
                 <Button onPress={this.createTrueFalseQuestion}
-                        backgroundColor="white"
-                        color="black"
+                        backgroundColor="green"
+                        color="white"
                         title="Submit"/>
-                <Button	backgroundColor="black"
+                <Button	backgroundColor="gray"
                            color="white"
                            title="Cancel"
                            onPress={() => this.props.navigation
                                .navigate('QuestionList')}/>
                 <Button onPress={this.deleteQuestion}
-                        backgroundColor="white"
-                        color="black"
+                        backgroundColor="red"
+                        color="white"
                         title="Delete" />
             </View>
         )

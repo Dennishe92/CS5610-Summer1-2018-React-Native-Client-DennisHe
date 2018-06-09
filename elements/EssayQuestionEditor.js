@@ -113,18 +113,18 @@ class EssayQuestionEditor extends React.Component {
                 />
 
                 <Button onPress={this.createEssayQuestion}
-                        backgroundColor="white"
-                        color="green"
+                        backgroundColor="green"
+                        color="white"
                         title="Submit"/>
-                <Button	backgroundColor="red"
+                <Button	backgroundColor="gray"
                            color="white"
                            title="Cancel"
                            onPress={() => this.props.navigation
                                .navigate('QuestionList')}/>
                 <Button onPress={this.deleteQuestion}
-                        backgroundColor="white"
-                        color="purple"
-                        title="Delete" />
+                        backgroundColor="red"
+                        color="white"
+                        title="Delete"/>
 
             </View>
         )

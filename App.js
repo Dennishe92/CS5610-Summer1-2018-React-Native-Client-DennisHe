@@ -1,18 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView } from 'react-native';
 import FixedHeader from './elements/FixedHeader'
-import TextHeadings from './elements/TextHeading'
-import Icons from './elements/Icons'
 import Exam from './elements/Exam'
-import QuestionTypeButtonGroupChooser from './elements/QuestionTypeButtonGroupChooser'
-import QuestionTypePicker from './elements/QuestionTypePicker'
 import TrueFalseQuestionEditor from './elements/TrueFalseQuestionEditor'
 import MultipleChoiceQuestionEditor from './elements/MultipleChoiceQuestionEditor'
 import EssayQuestionEditor from './elements/EssayQuestionEditor'
 import FillTheBlankQuestionEditor from './elements/FillTheBlankQuestionEditor'
 import { createStackNavigator } from 'react-navigation'
 import {Button} from 'react-native-elements'
-import ScreenX from './elements/ScreenX'
 import CourseList from './components/CourseList'
 import ModuleList from './components/ModuleList'
 import LessonList from './components/LessonList'
@@ -30,7 +25,7 @@ class Home extends React.Component {
     render() {
         return(
             <ScrollView>
-                
+
                 <FixedHeader/>
 
                 <Button title="Courses"

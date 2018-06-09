@@ -28,15 +28,15 @@
 //         return (
 //             <View style={{padding: 15}}>
 //
-//                 <Picker
-//                     onValueChange={(itemValue, itemIndex) =>
-//                         this.setState({questionType: itemValue})}
-//                     selectedValue={this.state.questionType}>
-//                     <Picker.Item value="TF" label="Multiple choice" />
-//                     <Picker.Item value="ES" label="Essay" />
-//                     <Picker.Item value="TF" label="True or false" />
-//                     <Picker.Item value="FB" label="Fill in the blanks" />
-//                 </Picker>
+                {/*<Picker*/}
+                    {/*onValueChange={(itemValue, itemIndex) =>*/}
+                        {/*this.setState({questionType: itemValue})}*/}
+                    {/*selectedValue={this.state.questionType}>*/}
+                    {/*<Picker.Item value="TF" label="Multiple choice" />*/}
+                    {/*<Picker.Item value="ES" label="Essay" />*/}
+                    {/*<Picker.Item value="TF" label="True or false" />*/}
+                    {/*<Picker.Item value="FB" label="Fill in the blanks" />*/}
+                {/*</Picker>*/}
 //
 //                 {/*<Button onPress={()=> {*/}
 //                     {/*if (this.state.questionType === "TF") {*/}

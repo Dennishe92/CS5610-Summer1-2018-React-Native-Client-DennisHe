@@ -54,8 +54,8 @@ class WidgetList extends Component {
                                 <ListItem onPress={() => this.props.navigation
                                     .navigate("QuestionList", {
                                         lessonId: this.state.lessonId,
-                                        examId: widget.id,
-                                        examTitle: widget.title
+                                        widgetId: widget.id,
+                                        widgetTitle: widget.title
                                     })}
                                           key={index}
                                           subtitle={widget.description}

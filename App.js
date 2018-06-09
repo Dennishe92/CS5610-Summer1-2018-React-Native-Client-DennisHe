@@ -95,6 +95,8 @@ const App = createStackNavigator({
     QuestionList,
     TrueFalseQuestionEditor,
     MultipleChoiceQuestionEditor,
+    FillTheBlankQuestionEditor,
+    EssayQuestionEditor,
     ScreenA,
     ScreenB,
     ScreenX,

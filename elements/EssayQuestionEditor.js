@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {TextInput, View} from 'react-native'
 import {Button, FormInput, FormLabel} from 'react-native-elements'
 import QuestionService from "../services/QuestionService";
@@ -10,7 +10,7 @@ class EssayQuestionEditor extends React.Component {
         this.state = {
             title: '',
             description: '',
-            points: 0,
+            points: '',
             instructions: '',
             questionId: 0,
             examId: 0,
@@ -29,10 +29,12 @@ class EssayQuestionEditor extends React.Component {
         const questionId = this.props.navigation.getParam("questionId");
         const title = this.props.navigation.getParam("title", '');
         const description = this.props.navigation.getParam("description", '');
+        const points = this.props.navigation.getParam("points", '');
         this.setState({examId: examId});
         this.setState({questionId: questionId});
         this.setState({title: title});
         this.setState({description: description});
+        this.setState({points: points});
     }
 
     createEssayQuestion() {
@@ -49,24 +51,21 @@ class EssayQuestionEditor extends React.Component {
     }
 
     deleteQuestion() {
-        this.essayQuestionService
+        this.QuestionService
             .deleteQuestion(this.state.questionId)
     }
 
     renderTitle() {
         if (this.props.navigation.getParam("title", '') === '') {
-            console.log("no title");
             return (
                 <FormInput onChangeText={text => this.updateForm({title: text})}/>
             )
         } else {
-            console.log("have title");
             return (
                 <FormInput placeholder={this.state.title}/>
             )
         }
     }
-
 
     renderDescription() {
         if (this.props.navigation.getParam("description", '') === '') {
@@ -80,6 +79,19 @@ class EssayQuestionEditor extends React.Component {
         }
     }
 
+    renderPoints() {
+        if (this.props.navigation.getParam("points", '') === '') {
+            return (
+                <FormInput onChangeText={text => this.updateForm({points: text})}/>
+            )
+        } else {
+            return (
+                <FormInput placeholder={this.state.points}/>
+            )
+        }
+    }
+
+
     render() {
         return(
             <View>
@@ -88,33 +100,30 @@ class EssayQuestionEditor extends React.Component {
                 <FormLabel>Title</FormLabel>
                 {this.renderTitle()}
 
-                {/*<FormInput onChangeText={text => this.updateForm({title: text})}/>*/}
 
                 <FormLabel>Description</FormLabel>
                 {this.renderDescription()}
-                {/*<FormInput onChangeText={text => this.updateForm({description: text})}/>*/}
 
                 <FormLabel>Points</FormLabel>
-                {/*{this.renderPoints()}*/}
-                <FormInput onChangeText={text => this.updateForm({points: text})}/>
+                {this.renderPoints()}
 
                 <TextInput
                     style={{height: 100}}
-                    placeholder="This is the textarea where students can answer the question!"
+                    placeholder="Text area for answers"
                 />
 
                 <Button onPress={this.createEssayQuestion}
                         backgroundColor="white"
-                        color="black"
+                        color="green"
                         title="Submit"/>
-                <Button	backgroundColor="black"
+                <Button	backgroundColor="red"
                            color="white"
                            title="Cancel"
                            onPress={() => this.props.navigation
                                .navigate('QuestionList')}/>
                 <Button onPress={this.deleteQuestion}
                         backgroundColor="white"
-                        color="black"
+                        color="purple"
                         title="Delete" />
 
             </View>

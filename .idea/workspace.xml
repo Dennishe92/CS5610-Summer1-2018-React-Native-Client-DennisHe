@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f564c0-d9b8-4d87-b3fb-1b32dd58f0d1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/QuestionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/QuestionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WidgetList.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/WidgetList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elements/EssayQuestionEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/EssayQuestionEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/ExamEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/elements/ExamEditor.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,8 +53,8 @@
       <file leaf-file-name="QuestionList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="104" column="37" lean-forward="true" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+            <state relative-caret-position="-27">
+              <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -68,10 +65,10 @@
       <file leaf-file-name="EssayQuestionEditor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elements/EssayQuestionEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="42" column="50" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="50" />
+            <state relative-caret-position="-459">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +138,8 @@
         <option value="$PROJECT_DIR$/services/QuestionService.js" />
         <option value="$PROJECT_DIR$/components/WidgetList.js" />
         <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/components/QuestionList.js" />
         <option value="$PROJECT_DIR$/elements/ExamEditor.js" />
+        <option value="$PROJECT_DIR$/components/QuestionList.js" />
         <option value="$PROJECT_DIR$/elements/EssayQuestionEditor.js" />
       </list>
     </option>
@@ -240,12 +237,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528405627903</updated>
       <workItem from="1528405632578" duration="24412000" />
-      <workItem from="1528498322493" duration="7743000" />
+      <workItem from="1528498322493" duration="9074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32155000" />
+    <option name="totallyTimeSpent" value="33486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -517,16 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="104" column="37" lean-forward="true" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/WidgetList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -554,12 +541,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elements/EssayQuestionEditor.js">
+    <entry file="file://$PROJECT_DIR$/components/QuestionList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="42" column="50" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="50" />
+        <state relative-caret-position="-27">
+          <caret line="63" column="73" lean-forward="true" selection-start-line="63" selection-start-column="73" selection-end-line="63" selection-end-column="73" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/EssayQuestionEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

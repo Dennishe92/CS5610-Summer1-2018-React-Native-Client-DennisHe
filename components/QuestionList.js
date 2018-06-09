@@ -52,29 +52,32 @@ class QuestionList extends Component {
                                             {examId: this.state.examId,
                                                 questionId: question.id,
                                                 title: question.title,
-                                                description: question.description
-                                            })
+                                                description: question.description,
+                                                points: question.points})
                                 if(question.type === "MultipleChoiceQuestion")
                                     this.props.navigation
                                         .navigate("MultipleChoiceQuestionEditor",
                                             {examId: this.state.examId,
                                                 questionId: question.id,
                                                 title: question.title,
-                                                description: question.description})
+                                                description: question.description,
+                                                points: question.points})
                                 if(question.type === "FillInBlankQuestion")
                                     this.props.navigation
                                         .navigate("FillTheBlankQuestionEditor",
                                             {examId: this.state.examId,
                                                 questionId: question.id,
                                                 title: question.title,
-                                                description: question.description})
+                                                description: question.description,
+                                                points: question.points})
                                 if(question.type === "EssayQuestion")
                                     this.props.navigation
                                         .navigate("EssayQuestionEditor",
                                             {examId: this.state.examId,
                                                 questionId: question.id,
                                                 title: question.title,
-                                                description: question.description})
+                                                description: question.description,
+                                                points: question.points})
                             }}
                             key={index}
                             subtitle={question.description}

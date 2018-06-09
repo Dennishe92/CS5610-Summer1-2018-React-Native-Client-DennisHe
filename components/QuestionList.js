@@ -4,7 +4,7 @@ import {Text, ListItem} from 'react-native-elements'
 import ExamService from '../services/ExamService'
 
 class QuestionList extends Component {
-    static navigationOptions = {title: this.state.examTitle}
+    static navigationOptions = {title: 'Question'}
     constructor(props) {
         super(props)
         this.state = {

@@ -14,7 +14,6 @@ class Assignment extends React.Component {
             widgetType: 'Assignment',
             lessonId: 1,
             widgetId: 1
-            // assignment: {title: 'New Assignment', description: 'add description'},
         };
 
         //Binding

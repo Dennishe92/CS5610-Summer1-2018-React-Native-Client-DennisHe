@@ -62,7 +62,7 @@ class QuestionList extends Component {
                                                 title: question.title,
                                                 description: question.description,
                                                 points: question.points})
-                                if(question.type === "FillInBlankQuestion")
+                                if(question.type === "FillTheBlankQuestion")
                                     this.props.navigation
                                         .navigate("FillTheBlankQuestionEditor",
                                             {examId: this.state.examId,
@@ -98,14 +98,14 @@ class QuestionList extends Component {
                            title="Add question"
                            onPress={() => this.props.navigation
                                .navigate(this.state.Questiontype, {ExamId: this.state.examId})}/>
-                <Button	backgroundColor="red"
+                <Button	backgroundColor="grey"
                            color="white"
                            title="Cancel"
                            onPress={() => this.props.navigation
                                .navigate("WidgetList")}/>
                 <Button onPress={() => this.deleteExam(this.state.examId)}
-                        backgroundColor="white"
-                        color="black"
+                        backgroundColor="red"
+                        color="white"
                         title="Delete exam"/>
 
             </ScrollView>

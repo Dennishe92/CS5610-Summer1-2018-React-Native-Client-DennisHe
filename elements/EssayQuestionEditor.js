@@ -43,7 +43,7 @@ class EssayQuestionEditor extends React.Component {
             title: this.state.title,
             description: this.state.description,
             instructions: this.state.instructions,
-            type: 'EssayQuestion'
+            type: this.state.type
         }
 
         this.QuestionService

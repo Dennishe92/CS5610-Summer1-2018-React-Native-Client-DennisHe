@@ -76,7 +76,7 @@ class QuestionService {
         });
     }
 
-    createEssayQuestion(examId, fillBlankQuestion) {
+    createFillTheBlankQuestion(examId, fillBlankQuestion) {
         return fetch(FB_API_URL.replace('EID', examId), {
             body: JSON.stringify(fillBlankQuestion),
             headers: {

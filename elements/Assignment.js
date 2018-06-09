@@ -12,7 +12,7 @@ class Assignment extends React.Component {
             title: '',
             description: '',
             points: '',
-            widgetType: 'Assignment'
+            widgetType: 'Assignment',
             lessonId: 1,
             widgetId: 1
             // assignment: {title: 'New Assignment', description: 'add description'},
@@ -137,7 +137,7 @@ class Assignment extends React.Component {
                         color="white"
                         title="delete"/>
 
-                <View style={{padding: 15, backgroundColor: "#66ccff"}}>
+                <View style={{padding: 15}}>
 
                     <FormLabel>Title:{this.state.title}</FormLabel>
                     <FormLabel>Description:{this.state.description}</FormLabel>

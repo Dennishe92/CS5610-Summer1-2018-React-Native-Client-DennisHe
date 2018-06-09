@@ -8,12 +8,15 @@ class QuestionList extends Component {
         super(props)
         this.state = {
             questions: [],
-            examId: 1
+            examId: 1,
+            examTitle: ''
         }
     }
     componentDidMount() {
-        const {navigation} = this.props;
-        const examId = navigation.getParam("examId")
+        const examId = this.props.navigation.getParam("examId")
+        const examTitle = this.props.navigation.getParam("examTitle")
+        this.setState({examId: examId})
+        this.setState({examTitle: examTitle})
         fetch("http://10.110.97.251:8080/api/exam/"+examId+"/question")
             .then(response => (response.json()))
             .then(questions => this.setState({questions}))
@@ -31,6 +34,12 @@ class QuestionList extends Component {
                                 if(question.type === "MultipleChoice")
                                     this.props.navigation
                                         .navigate("MultipleChoiceQuestionEditor", {questionId: question.id})
+                                if(question.type === "Essay")
+                                    this.props.navigation
+                                        .navigate("EssayQuestionEditor", {questionId: question.id})
+                                if(question.type === "FillTheBlank")
+                                    this.props.navigation
+                                        .navigate("FillTheQuestionEditor", {questionId: question.id})
                             }}
                             key={index}
                             subtitle={question.description}
